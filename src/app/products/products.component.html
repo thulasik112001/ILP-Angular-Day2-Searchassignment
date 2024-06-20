@@ -1,0 +1,19 @@
+<div class="container d-flex flex-row justify-content-center vh-100">
+  <div class="row">
+    <div class="col">
+      <input [(ngModel)]="toFilter" type="text" placeholder="Search" class="form-control">
+    </div>
+  </div>
+<div class="container">
+    <div class="row">
+      @for (product of products| filter: toFilter; track product.id) {
+        <div class="col">
+        <h2>{{ product.title }}</h2>
+        <h2>{{ product.category }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product.weight }}</p>
+       </div>
+    }
+</div>
+</div>
